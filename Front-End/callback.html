@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+    <h1>Welcome back!</h1>
+    <div id="user"></div>
+
+    <script>
+        // Extract the authentication result (token) from the URL fragment
+        const urlParams = new URLSearchParams(window.location.hash.substr(1));  // Get params from URL fragment
+
+        const accessToken = urlParams.get('access_token');
+        const idToken = urlParams.get('id_token');
+        const error = urlParams.get('error');
+
+        if (error) {
+            document.getElementById('user').innerHTML = `Error: ${error}`;
+        } else if (accessToken) {
+            // Successfully authenticated
+            document.getElementById('user').innerHTML = `Access Token: ${accessToken}`;
+
+            // You can now use the access token to make authenticated API requests or fetch user data
+        } else {
+            document.getElementById('user').innerHTML = 'No authentication token found';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.1/lux/bootstrap.min.css" integrity="sha512-v51SrQ+z+dLohC1d0HyJA0nSM6XIyLoQl3IxRtM28vlbOPBRMSD3MlyUMNkLyBPlVGxt+9V+ChVG2c8LQsiu3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style>
+            .container {
+                background-color:rgba(236, 227, 232, 0.549);
+                min-height: 100%;
+                height: 100%;
+                align-items: center;
+                margin-top: 50px;
+                border-radius: 0.5em;
+            }
+            .main.flex {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5em;
+            }
+        </style>
+        <script type="text/javascript" src="/Front-End/validation.js" defer></script>
+
+    </head>
+    <body style="background-color: whitesmoke">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+              <a class="navbar-brand" style="font-size: x-large">Interactive Student Games</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/home.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about-creators.html">About the Creators</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/login.html">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+        <main class="flex">
+            <div class="container">
+                <h1>Sign Up</h1>
+
+                <p>Don't Have an Account? Sign Up!</p>
+                <p id="error-message"></p>
+                <form id="loginForm">
+                    <div>
+                        <div>
+                          <label for="firstname-input">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>
+                          </label>
+                          <input tpye="text" id="name" placeholder="First Name" requried/>
+                        </div>
+                      
+                        <div>
+                          <label for="username-input">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-440q58 0 99-41t41-99q0-58-41-99t-99-41q-58 0-99 41t-41 99q0 58 41 99t99 41ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-46q-54-53-125.5-83.5T480-360q-83 0-154.5 30.5T200-246v46Z"/></svg>
+                          </label>
+                          <input type="text" id="loginUsername" placeholder="Username" required />
+                        </div>
+
+                        <div>
+                          <label for="password-input">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm240-200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z"/></svg>
+                          </label>
+                          <input type="password" id="loginPassword" placeholder="Password" required />
+                        </div>
+                        
+                        <div>
+                          <label for="confirm-password-input">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm240-200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z"/></svg>
+                          </label>
+                          <input type="confirm-password" id="confirmLoginPassword" placeholder="Confirm Password" required />
+                        </div>
+                        
+                        <button type="submit">Sign Up</button>
+                    </div>
+                </form>
+              </br>
+                <p>Already have an Account?
+                  <a href="/Front-End/login.html">Login</a>
+                </p>
+            </div>
+        </main>
+    
+    </body>
+</html>
