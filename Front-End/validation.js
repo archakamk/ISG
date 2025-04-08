@@ -71,10 +71,11 @@ form.addEventListener('submit', async (e) => {
       const data = await response.json();
 
       if (!response.ok) {
+        error_message.style.color = 'red';
         error_message.innerText = data.message || 'Signup failed';
       } else {
-        alert(data.message);
-        window.location.href = 'http://localhost:3000/login.html';
+        error_message.style.color = 'green';
+        error_message.innerText = data.message;
       }
 
     } catch (err) {

@@ -8,156 +8,8 @@
 
       <title>Interactive Student Games</title>
 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.1/lux/bootstrap.min.css" integrity="sha512-v51SrQ+z+dLohC1d0HyJA0nSM6XIyLoQl3IxRtM28vlbOPBRMSD3MlyUMNkLyBPlVGxt+9V+ChVG2c8LQsiu3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-      <style>
-        .memory-container {
-          /* margin-left: 50px;
-          margin-top: 50px; */
-          height: 200px;
-          width: 400px;
-          border-radius: 1em;
-          background:rgb(237, 3, 237);
-          text-align:center;
-          /* vertical-align: auto; */
-          /* align-items: center; */
-          font-size: x-large;
-
-          margin: 50px;
-
-          /* display:inline-block; */
-        }
-        .shape-container{
-          background: rgb(106, 203, 235);
-          /* margin-top: 50px; */
-          height: 200px;
-
-          margin: 50px;
-          width: 400px;
-          text-align: center;
-          font-size: x-large;
-          /* display: inline-block; */
-          border-radius: 1em;
-          /* margin-left: 75px; */
-        }
-        .color-container {
-          background: rgb(88, 247, 170);
-          /* margin-top: 50px; */
-          height: 200px;
-          width: 400px;
-          border-radius: 1em;
-          text-align: center;
-          font-size: x-large;
-
-          margin: 50px;
-          /* display: inline-block; */
-          /* margin-left: 75px; */
-          /* align-items: center; */
-          /* vertical-align: auto; */
-        }
-        .rapid-container {
-          background: orange;
-          /* margin-top: 100px; */
-          height: 200px;
-          width: 400px;
-          border-radius: 1em;
-          text-align: center;
-          font-size: x-large;
-
-          margin: 50px;
-          /* display: inline-block; */
-          /* margin-left: 300px; */
-          /* align-content: center; */
-          /* vertical-align: auto; */
-        }
-        .round-container {
-          background: #ec7cec;
-          /* margin-top: 100px; */
-          height: 200px;
-          width: 400px;
-          border-radius: 1em;
-          text-align: center;
-          font-size: x-large;
-
-          margin: 50px;
-          /* display: inline-block; */
-          /* margin-left: 100px; */
-        }
-        .main {
-          margin-top: 50px;
-          gap: 5em;
-        }
-        .sussy-balls {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
-
-          margin-top: 50px;
-          margin-bottom: 50px;
-
-          width: 80%;
-          margin: auto;
-        }
-        .doggy-balls {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
-
-          margin-top: 50px;
-          margin-bottom: 50px;
-
-          width: 50%;
-          margin: auto;
-        }
-        .head {
-          margin-top: 25px;
-          text-align: center;
-          font-weight: bold;
-        }
-        .para {
-          margin-top: 50px;
-        }
-        .mem-img {
-          width: 175px;
-          height: 100px;
-          margin: 1em;
-          margin-left: 115px;
-          display: block;
-        }
-        .shape-img {
-          width: 175px;
-          height: auto;
-          margin: 1em;
-          margin-left: 115px;
-          display: block;
-        }
-        .color-img {
-          width: 175 px;
-          height: 100px;
-          margin: 1em;
-          margin-left: 150px;
-          display: block;
-        }
-        .rapid-img {
-          width: 175 px;
-          height: 100px;
-          margin: 1em;
-          margin-left: 100px;
-          display: block;
-        }
-        .round-img {
-          width: 175 px;
-          height: 100px;
-          margin: 1em;
-          margin-left: 150px;
-          display: block;
-        }
-
-        .p {
-          color: white;
-          text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-        }
-      </style>
+      <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.1/lux/bootstrap.min.css" integrity="sha512-v51SrQ+z+dLohC1d0HyJA0nSM6XIyLoQl3IxRtM28vlbOPBRMSD3MlyUMNkLyBPlVGxt+9V+ChVG2c8LQsiu3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+      <link rel="stylesheet" href="/Front-End/home.css"
 
     </head>
     
@@ -177,13 +29,13 @@
                 <a class="nav-link active" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/about.html">About</a>
+                <a class="nav-link" href="/Front-End/about.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/about-creators.html">About the Creators</a>
+                <a class="nav-link" href="/Front-End/about-creators.html">About the Creators</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/login.html">Login</a>
+                <a class="nav-link" href="/Front-End/login.html">Login</a>
               </li>
             </ul>
           </div>
@@ -199,7 +51,7 @@
 
         <div class="sussy-balls">
         <!--Memory-->
-        <a href="/memory.html">
+        <a href="/Front-End/memory.html">
           <div class="memory-container bg-danger">
             Memory Test
             <img class="mem-img" src="https://i.imgur.com/S8FktjB.png">
@@ -207,7 +59,7 @@
         </a>
 
         <!--Shape-->
-        <a href="/shape.html">
+        <a href="/Front-End/shape.html">
           <div class="shape-container">
             Shape Test
             <img class="shape-img" src="https://i.imgur.com/nwGxgd5.png">
@@ -215,7 +67,7 @@
         </a>
 
         <!--Color-->
-        <a href="/color.html">
+        <a href="/Front-End/color.html">
           <div class="color-container">
             Color Test
             <img class="color-img" src="https://i.imgur.com/iP0E7Fa.png">
@@ -225,7 +77,7 @@
 
       <div class="doggy-balls">
         <!--Rapid Math-->
-        <a href="/RapidMath.html">
+        <a href="/Front-End/RapidMath.html">
           <div class="rapid-container">
             Rapid Math
             <img class="rapid-img" src="https://i.imgur.com/c0MDEkG.png">
@@ -234,7 +86,7 @@
 
 
         <!--Dollar Up-->
-        <a href="/MathRound.html">
+        <a href="/Front-End/MathRound.html">
           <div class="round-container">
             Dollar Up
             <img class="round-img" src="https://i.imgur.com/HR7s8ai.png">

@@ -2,54 +2,7 @@
 <html>
     <head>
         <title>Rapid Math</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.1/lux/bootstrap.min.css" integrity="sha512-v51SrQ+z+dLohC1d0HyJA0nSM6XIyLoQl3IxRtM28vlbOPBRMSD3MlyUMNkLyBPlVGxt+9V+ChVG2c8LQsiu3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <style>
-          .container {
-                background-color:rgb(102, 204, 255);
-                min-height: 100%;
-                height: 100%;
-                align-items: center;
-                margin-top: 50px;
-                border-radius: 0.5em;
-            }
-            .main.flex {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 5em;
-            }
-            .header{
-               margin-top: 25px; 
-               text-align: center; 
-               font:bolder;
-            }
-            .btn {
-                color: black;
-                background-color: bisque;
-                margin-top: 5px;
-                border-radius: 1em;
-                font-size: x-large;
-            }
-
-            .items {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-            .top-para {
-                margin-top: 50px;
-                margin-left: 50px;
-                margin-right: 50px;
-                font-size: larger;
-                text-align: center;
-                color:black;
-            }
-            .info {
-                margin-top: 10px;
-                text-align: center;
-                font-size: 40pt;
-            }
-        </style>
-        
+        <link rel="stylesheet" href="/Front-End/rapidmath.css" />
     </head>
 
     <body>
@@ -63,14 +16,16 @@
               <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                   <li class="nav-item">
-                    <a class="nav-link" href="/home.html">Home</a>
+                    <a class="nav-link" href="/Front-End/home.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/about.html">About</a>
+                    <a class="nav-link" href="/Front-End/about.html">About</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/about-creators.html">About the Creators</a>
+                    <a class="nav-link" href="/Front-End/about-creators.html">About the Creators</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/Front-End/login.html">Login</a>
                   </li>
                 </ul>
               </div>
@@ -111,109 +66,6 @@
             </div>
         </main>
         
-        <script type="text/javascript">
-          document.getElementById("tester").style.display = "none"
-          //both numbers to be displayed
-          let first = Math.floor(Math.random()*9)+1
-          let second = Math.floor(Math.random()*9)+1
-          //list with possible opperations
-          var operations = ["+","-"]
-          //Random operator
-          let operation = operations[Math.floor(Math.random()*2)]
-          let answer
-          let wrong1
-          let wrong2
-          let tempID
-                   
-          function generate(){
-            //Check if the operation is subtraction and if the first number is less than the second
-            if (operation === "-" && first<second){
-              var temp = first
-              first = second
-              second = temp
-            }
-            //Storing value of answer
-            if (operation === "-"){
-              answer = first-second
-            } 
-            else {
-              answer = first+second
-            }
-            
-            wrong1 = Math.floor(Math.random()*19)
-            while (wrong1==answer) {
-              wrong1 = Math.floor(Math.random()*19)
-            }
-            
-            wrong2 = Math.floor(Math.random()*19)
-            while (wrong2==answer || wrong2==wrong1) {
-              wrong1 = Math.floor(Math.random()*19)
-            }
-            document.getElementById("demo").innerHTML = first + " " + operation + " " + second
-
-            document.getElementById("tester").style.display = "block";
-           
-            var choices = [answer, wrong1, wrong2]
-            var choice_1 = Math.floor(Math.random()*3)
-            var choice_2 = Math.floor(Math.random()*3)
-            while (choice_2==choice_1){
-               choice_2 = Math.floor(Math.random()*3)
-            }
-            var choice_3 = Math.floor(Math.random()*3)
-            while (choice_3 == choice_1 || choice_3 == choice_2){
-               choice_3 = Math.floor(Math.random()*3)
-            }
-            document.getElementById("ex1").innerHTML = choices[choice_1]
-            document.getElementById("btn1").innerHTML = choices[choice_1]
-            document.getElementById("ex2").innerHTML = choices[choice_2]
-            document.getElementById("btn2").innerHTML = choices[choice_2]
-            document.getElementById("ex3").innerHTML = choices[choice_3]
-            document.getElementById("btn3").innerHTML = choices[choice_3]
-                    
-          }
-
-          function reply_click(){
-            document.addEventListener('click', function(e) {
-                    temp = e.target.id
-                    // if(temp.indexOf("btn")!=-1) {
-                    //   temp
-                    // }
-                    //console.log("temp = "+ temp)
-                    // console.log("i am inside")
-                    let answer1 = document.getElementById(e.target.id).innerHTML
-                    console.log("answer: " + answer1)
-                    
-                    //console.log(numberSubmitted)
-                    //let buttonID 
-                    if (answer1.length>2){
-                      answer1 = answer1.substring(answer1.indexOf(">")+1,answer1.indexOf(">")+2)
-                    }
-                    
-                    // console.log("printint inner html on document.getElementById: " + document.getElementById(e.target.id).innerHTML)
-                    // console.log("shape name: " + shape_name)
-                    //console.log(buttonID)
-
-                    //checks if the submitted answer is identical to the answer and displays correct or incorrect
-                    if (answer1 === ""+answer) {
-                        document.getElementById(e.target.id).innerHTML = 'correct'
-                        document.getElementById(e.target.id).style.backgroundColor = "green"
-                    } else { 
-                        document.getElementById(e.target.id).innerHTML = 'incorrect'
-                        document.getElementById(e.target.id).style.backgroundColor = "red"
-                    }
-
-                }, false)
-
-                //console.log("173 am i outside")
-            
-                setTimeout(
-                    function(){
-                        window.location.reload()
-                    }
-                , 3000)
-            }
-
-
-        </script>
+        <script type="text/javascript" src="/Front-End/rapidmath.js"></script>
     </body>
 </html>

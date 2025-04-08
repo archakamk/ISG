@@ -5,54 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Memory Test</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.1/lux/bootstrap.min.css" integrity="sha512-v51SrQ+z+dLohC1d0HyJA0nSM6XIyLoQl3IxRtM28vlbOPBRMSD3MlyUMNkLyBPlVGxt+9V+ChVG2c8LQsiu3w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-
-        <style>
-            .container {
-                background-color:rgb(102, 204, 255);
-                min-height: 100%;
-                height: 100%;
-                align-items: center;
-                margin-top: 50px;
-                border-radius: 0.5em;
-            }
-            .main.flex {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 5em;
-            }
-            .header{
-               margin-top: 25px; 
-               text-align: center; 
-               font:bolder;
-            }
-            .btn {
-                color: black;
-                background-color: bisque;
-                margin-top: 5px;
-                border-radius: 1em;
-                font-size: x-large;
-            }
-
-            .items {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-            .top-para {
-                margin-top: 50px;
-                margin-left: 50px;
-                margin-right: 50px;
-                font-size: larger;
-                text-align: center;
-                color:black;
-            }
-            .info {
-                margin-top: 10px;
-                text-align: center;
-                font-size: 40pt;
-            }
-        </style>
+        <link rel="stylesheet" href="/Front-End/memory.css"/>
 
     </head>
 
@@ -67,14 +20,16 @@
               <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                   <li class="nav-item">
-                    <a class="nav-link" href="/home.html">Home</a>
+                    <a class="nav-link" href="/Front-End/home.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/about.html">About</a>
+                    <a class="nav-link" href="/Front-End/about.html">About</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/about-creators.html">About the Creators</a>
+                    <a class="nav-link" href="/Front-End/about-creators.html">About the Creators</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/Front-End/login.html">Login</a>
                   </li>
                 </ul>
               </div>
@@ -116,106 +71,7 @@
             </div>
         </main>
 
-        <script type="text/javascript">
-            document.getElementById("tester").style.display = "none";
-
-            //Array with all possible characters
-            let allChars = [
-                ['a','b','c'],
-                ['d','e','f'],
-                ['g','h','i'],
-                ['j','k','l'],
-                ['m','n','o'],
-                ['p','q','r'],
-                ['s','t','u'],
-                ['v','w','x'],
-                ['y','z','!'], 
-                ['?','=','+']
-            ]
-
-            //All globally declared variables
-            var row = Math.floor(Math.random()*allChars.length)
-            var col = Math.floor(Math.random()*allChars[0].length)
-            var toDisplay = allChars[row][col]
-            var toDisplayChecker = allChars[row][col]
-            var answers = allChars[row]
-            var option1 = answers[0]
-            var option2 = answers[1]
-            var option3 = answers[2]
-
-            //generate function -- allows us to display the question and the multiple choice options
-            function generate() {
-
-                document.getElementById("demo").innerHTML = toDisplay 
-               
-                //allows us to display a certain text for n number of seconds
-
-                setTimeout(function(){
-                    document.getElementById("demo").innerHTML = ''
-
-                    document.getElementById("tester").style.display = "block";
-               
-                    document.getElementById("ex1").innerHTML = option1
-                    document.getElementById("btn1").innerHTML = option1
-                    document.getElementById("ex2").innerHTML = option2
-                    document.getElementById("btn2").innerHTML = option2
-                    document.getElementById("ex3").innerHTML = option3
-                    document.getElementById("btn3").innerHTML = option3
-                },8000);      
-            }   
-                
-            
-            //This function allows us to check if the answer submitted by the user is correct or not
-            var reply_click = function(){
-
-                //eventListener must be used to take in input from player
-                document.addEventListener('click', function(e) {
-
-                    // console.log("Line 128"+document.getElementById(e.target.id).innerHTML) 
-                    // console.log("Line 129"+toDisplayChecker)
-                    // console.log(document.getElementById(e.target.id).innerHTML == toDisplayChecker)
-                   
-                    let letterDisplayed = document.getElementById(e.target.id).innerHTML //the letter that is submitted by user
-                    let modified;
-
-                    // console.log("This is assigned to modified: "+letterDisplayed.substring(13,14))
-                    // console.log("This is substring(13): " + letterDisplayed.substring(13))
-                    // console.log("Until second tag(14): " + letterDisplayed.substring(14))
-
-                    //checks to see if the actual answer contains extra unecessary characters & modifies the string
-                    if(letterDisplayed.length > 1) {
-                        modified = letterDisplayed.substring(letterDisplayed.indexOf(">")+1, letterDisplayed.indexOf(">")+2)
-                       
-                        //console.log("modified: "+ modified)
-                    }
-                    else{
-                        modified = letterDisplayed
-                    }
-
-                    //checks if the submitted answer is identical to the answer and displays correct or incorrect
-                    if (modified === toDisplayChecker) {
-                        document.getElementById(e.target.id).innerHTML = 'correct'
-                        document.getElementById(e.target.id).style.backgroundColor = "green"
-                    } else { 
-                        document.getElementById(e.target.id).innerHTML = 'incorrect'
-                        document.getElementById(e.target.id).style.backgroundColor = "red"
-                    }
-
-                }, false)
-            
-                setTimeout(
-                        function(){
-                            window.location.reload()
-                    }, 5000)
-                }
-
-
-                //used to take in info
-                document.getElementById('btn1').onclick = reply_click;
-                document.getElementById('btn2').onclick = reply_click;
-                document.getElementById('btn3').onclick = reply_click;
-
-        </script>
+        <script type="text/javascript" src="/Front-End/memory.js"></script>
         
     </body>
     

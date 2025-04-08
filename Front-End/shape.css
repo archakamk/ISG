@@ -1,0 +1,71 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.1/lux/bootstrap.min.css');
+:root
+
+.container {
+    background-color:rgb(102, 204, 255);
+    min-height: 100%;
+    height: 100%;
+    align-items: center;
+    margin-top: 50px;
+    border-radius: 0.5em;
+}
+.main.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5em;
+}
+.header{
+   margin-top: 25px; 
+   text-align: center; 
+   font:bolder;
+}
+.btn {
+    color: black;
+    background-color: bisque;
+    margin-top: 5px;
+    border-radius: 1em;
+    font-size: x-large;
+}
+.items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.top-para {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: larger;
+    text-align: center;
+    color:black;
+}
+.info {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 40pt;
+}
+.txt-before-deco {
+    text-align: center;
+    font: bolder;
+}
+.resize {
+    width: auto;
+    height: 200px;
+}
+.cont {
+    display: inline-block;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+.ex1 {
+    margin-bottom: 50px;
+    gap: 2em;
+}
+.ex2 {
+    margin-bottom: 50px;
+    gap: 2em;
+}
+.ex3 {
+    margin-bottom: 50px;
+    gap: 2em;
+}
